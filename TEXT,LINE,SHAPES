@@ -1,0 +1,69 @@
+package com.example.two;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class HelloApplication extends Application {
+    @Override
+    public void start(Stage stage) throws IOException {
+        Group root = new Group();
+        Scene scene= new Scene(root, 600,600, Color.CYAN);
+        stage.setScene(scene);
+        stage.setResizable(false);
+//text
+        Text text = new Text("Hello Fx");
+        text.setX(200);
+        text.setY(50.0);
+        text.setFont(Font.font("roman",50));
+        text.setFill(Color.GREEN);
+//line
+        Line line= new Line(200,55,375,55);
+        line.setStroke(Color.RED);
+        line.setStrokeWidth(5);
+        line.setOpacity(0.6);
+//shape
+//rectangle
+        Rectangle rect =new Rectangle(00,65,600,115);
+        rect.setFill(Color.YELLOWGREEN);
+        rect.setStrokeWidth(5);
+        rect.setStroke(Color.GRAY);
+//triangle
+        Polygon triangle=new Polygon();
+        triangle.getPoints().setAll(00.0,185.0,600.0,185.0,300.0,350.0);
+        triangle.setFill(Color.BROWN);
+        triangle.setStrokeWidth(5);
+        triangle.setStroke(Color.BLACK);
+//circle
+        Circle circle=new Circle();
+        circle.setCenterX(300);
+        circle.setCenterY(475);
+        circle.setRadius(120);
+        circle.setFill(Color.BLUEVIOLET);
+        circle.setStroke(Color.VIOLET);
+        circle.setStrokeWidth(5);
+
+//adding created nodes to root node as a children
+        root.getChildren().add(text);
+        root.getChildren().add(line);
+        root.getChildren().add(rect);
+        root.getChildren().add(triangle);
+        root.getChildren().add(circle);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}
